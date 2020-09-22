@@ -35,7 +35,7 @@ gulp.task('styles', function() {
 //     .pipe(gulp.dest('css/'));
 // });
 gulp.task('js', function() {
-    return gulp.src("src/js/*.js")
+    return gulp.src("src/js/**/*.js")
         .pipe(browserSync.stream());
 });
 

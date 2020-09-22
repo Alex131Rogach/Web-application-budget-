@@ -11,7 +11,9 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
     "browser-sync": "^2.26.12",
