@@ -1,3 +1,5 @@
+"use strict";
+
 function modaleWindow() {
     const buttonsHeader = document.querySelectorAll('.header__items button'),
           modalWindow = document.querySelector('.modalWindow'),
@@ -21,6 +23,9 @@ function modaleWindow() {
             body.style.overflow = 'hidden';
             modalWindow.style.display = 'flex';
             showRegWindow();
+            buttonsHeader.forEach(item => {
+                item.disabled = 'disabled';
+            });
         function showRegWindow() {
             pos += 1;
             view += 2;
@@ -30,30 +35,30 @@ function modaleWindow() {
                 requestAnimationFrame(showRegWindow);
             }
         }
+        closeModal();
     }
 
     function closeModal() {
-        document.addEventListener('keydown', (e) => {
-
-            if (e.code === 'Escape') {
-                modalWindow.style.display = 'none';
-                body.style.overflow = 'scroll';
-            }
-        });
 
         modalWindowClose.addEventListener('click', (e) => {
-            modalWindow.style.display = 'none';
+                functional();
         });
 
         modalWindow.addEventListener('click', (e) => {
 
             if (e.target === modalWindow) {
-                modalWindow.style.display = 'none';
+                functional();
             }
         });
-    }
 
-    closeModal();
+        function functional() {
+            modalWindow.style.display = 'none';
+            body.style.overflow = 'scroll';
+            buttonsHeader.forEach(item => {
+                item.disabled = '';
+            });
+        }
+    }
 }
 
 module.exports = modaleWindow;
