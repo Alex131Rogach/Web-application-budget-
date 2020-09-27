@@ -16,17 +16,17 @@
             <i class="modalWindow__close"></i>
             <img src="icon/registration.svg">
             </div>
-            <div class="modalWindow__inputs">
+            <form class="modalWindow__inputs">
                 <input name="name" placeholder="Name" class="modalWindow__input"></input>
                 <input name="surname" placeholder="Surname" class="modalWindow__input"></input>
                 <input id="number" name="number" placeholder="Number" class="modalWindow__input"></input>
                 <input name="email" placeholder="Email" class="modalWindow__input"></input>
-                <div class="mistakeMessage">Data field is incorrect </div>
+                <div class="modalWindow__mistakeMessage"></div>
                 <div class="modalWindow__checkbox">
-                    <input id="man" type="checkbox">Man</input>
-                    <input id="female" type="checkbox">Female</input>
+                        <input name="sex" value="man" class="man" type="radio" checked>Man</input>
+                        <input name="sex" value="female" class="female" type="radio" >Female</input>
                 </div>
-            </div>
+            </form>
             <button class="modalWindow__button">Create</button>
         </div>
     </section>
